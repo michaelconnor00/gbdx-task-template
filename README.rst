@@ -1,7 +1,7 @@
 gbdx-task-template
 ------------------
 
-.. image:: https://circleci.com/gh/michaelconnor00/gbdx-task-template/tree/master.svg?style=svg
+.. image:: https://circleci.com/gh/michaelconnor00/gbdx-task-template/tree/master.svg?style=shield
     :target: https://circleci.com/gh/michaelconnor00/gbdx-task-template/tree/master
 
 .. image:: https://badge.fury.io/py/gbdx-task-template.svg
