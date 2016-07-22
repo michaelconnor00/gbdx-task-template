@@ -4,7 +4,7 @@ from setuptools import setup, find_packages
 setup(
     name='gbdx-task-template',
     version='0.1.0',
-    packages=find_packages(exclude=['docs', 'test', 'examples', 'docker_runner']),
+    packages=find_packages(),
     include_package_data=True,
     install_requires=[
         'jsonschema==2.4.0',
