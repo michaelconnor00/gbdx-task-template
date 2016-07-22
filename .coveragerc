@@ -1,0 +1,18 @@
+#
+# To get coverage reports for tests.
+#   py.test --cov task_template --cov-report html task_template
+#
+[run]
+omit =
+    # Folders to omit
+    task_template/test/*
+    # Single files to omit
+    */__init__.py
+    .bumpversion.cfg
+    .gitignore
+    license.md
+    MANIFEST.in
+    pytest.ini
+    README.rst
+    requirements.txt
+    setup.py

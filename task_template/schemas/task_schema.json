@@ -1,0 +1,140 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "id": "urn:jsonschema:com:digitalglobe:taskregistry:TaskDescriptor",
+  "definitions": {
+    "PortDescriptor": {
+      "type": "object",
+      "properties": {
+        "description": {
+          "type": "string",
+          "description": "A description of the port."
+        },
+        "name": {
+          "type": "string",
+          "description": "The port name."
+        },
+        "required": {
+          "type": "boolean",
+          "description": "Is the port required.  If not required, the system will select a reasonable default value."
+        },
+        "type": {
+          "type": "string",
+          "description": "The port type."
+        },
+        "multiplex": {
+          "type": "boolean",
+          "description": "Are multiple ports port name as prefix allowed."
+        }
+      },
+      "required": [
+        "name",
+        "type"
+      ]
+    },
+    "ContainerDescriptor": {
+      "type": "object",
+      "properties": {
+        "command": {
+          "type": "string",
+          "description": "The command used to launch the container."
+        },
+        "properties": {
+          "type": "object",
+          "description": "Container descriptor properties",
+          "properties": {
+            "image": {
+              "type": "string",
+              "description": "An image name that uniquely identifies the container within the GBD system."
+            },
+            "domain": {
+              "type": "string",
+              "description": "Identifies the worker domain/group/collective under which to run."
+            }
+          },
+          "required": [
+            "image"
+          ]
+        },
+        "type": {
+          "type": "string",
+          "description": "The container type.",
+          "enum": [
+            "DOCKER",
+            "GPUDOCKER",
+            "AMI",
+            "TASK_DRIVER"
+          ]
+        }
+      },
+      "required": [
+        "type",
+        "properties"
+      ]
+    }
+  },
+  "properties": {
+    "inputPortDescriptors": {
+      "type": "array",
+      "description": "The input ports for the task.",
+      "items": {
+        "$ref": "#/definitions/PortDescriptor"
+      },
+      "minItems": 1
+    },
+    "outputPortDescriptors": {
+      "type": "array",
+      "description": "The ports that are output by the task.",
+      "items": {
+        "$ref": "#/definitions/PortDescriptor"
+      },
+      "minItems": 0
+    },
+    "description": {
+      "type": "string",
+      "description": "A human-readable description of the function performed by this task."
+    },
+    "containerDescriptors": {
+      "type": "array",
+      "description": "The containers that are capable of running the task.",
+      "items": {
+        "$ref": "#/definitions/ContainerDescriptor"
+      },
+      "minItems": 1,
+      "maxItems": 1
+    },
+    "name": {
+      "type": "string",
+      "description": "A name that uniquely identifies the task descriptor."
+    },
+    "properties": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "description": "Additional properties of the task.",
+      "properties": {
+        "timeout": {
+          "type": "integer",
+          "description": "The integer of the default timeout to this task (in seconds).",
+          "minimum": 0,
+          "maximum": 36000
+        },
+        "isPublic": {
+          "type": "boolean",
+          "description": "Visibility of the task to other users. Defaults to false."
+        }
+      },
+      "required": [
+        "timeout"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "name",
+    "containerDescriptors",
+    "inputPortDescriptors"
+  ],
+  "additionalProperties": false
+}
