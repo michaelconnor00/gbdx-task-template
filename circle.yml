@@ -2,3 +2,6 @@ general:
   branches:
     only:
       - master
+test:
+  post:
+    - python setup.py sdist upload -r pypi
