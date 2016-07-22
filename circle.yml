@@ -4,4 +4,9 @@ general:
       - master
 test:
   post:
+    - touch ~/.pypirc
+    - echo "[pypi]" >> ~/.pypirc
+    - echo "repository=https://pypi.python.org/pypi" >> ~/.pypirc
+    - echo "username:" $PYPI_USERNAME >> ~/.pypirc
+    - echo "password:" $PYPI_PASSWORD >> ~/.pypirc
     - python setup.py sdist upload -r pypi
