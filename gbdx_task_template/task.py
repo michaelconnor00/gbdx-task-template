@@ -3,8 +3,8 @@ import json
 
 from jsonschema import validate as validate_schema
 
-from task_template.schemas.task_descriptor import TaskDescriptor
-from task_template.port import Port, InputPort, OutputPort
+from gbdx_task_template.schemas.task_descriptor import TaskDescriptor
+from gbdx_task_template.port import Port, InputPort, OutputPort
 
 
 class Task(object):

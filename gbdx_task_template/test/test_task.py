@@ -1,6 +1,6 @@
 import json
 import os
-from test.test_base import TestBase
+from gbdx_task_template.test.test_base import TestBase
 
 
 class TestTask(TestBase):

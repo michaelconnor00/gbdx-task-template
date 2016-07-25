@@ -2,7 +2,7 @@ from unittest import TestCase
 import os
 import mock
 
-from task_template import TaskTemplate, Task, InputPort, OutputPort
+from gbdx_task_template import TaskTemplate, Task, InputPort, OutputPort
 
 
 class MyBasicApp(TaskTemplate):

@@ -1,6 +1,6 @@
 import json
 
-from test.test_base import TestBase, MyBasicApp, BadTaskApp
+from gbdx_task_template.test.test_base import TestBase, MyBasicApp, BadTaskApp
 
 
 class TestApplicationTemplate(TestBase):

@@ -1,11 +1,11 @@
 #
 # To get coverage reports for tests.
-#   py.test --cov task_template --cov-report html task_template
+#   py.test --cov gbdx_task_template --cov-report html gbdx_task_template
 #
 [run]
 omit =
     # Folders to omit
-    task_template/test/*
+    gbdx_task_template/test/*
     # Single files to omit
     */__init__.py
     .bumpversion.cfg

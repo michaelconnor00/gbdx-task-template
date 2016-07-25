@@ -1,7 +1,7 @@
 import os
 
-from test.test_base import TestBase, temp_env_var
-from task_template import InputPort, OutputPort
+from gbdx_task_template.test.test_base import TestBase, temp_env_var
+from gbdx_task_template import InputPort, OutputPort
 
 
 class TestPort(TestBase):
