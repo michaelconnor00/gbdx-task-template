@@ -5,6 +5,9 @@ setup(
     name='gbdx-task-template',
     version='0.1.1',
     packages=find_packages(),
+    data_files=[
+        ('task_template', ['schemas/task_schema.json']),
+    ],
     include_package_data=True,
     install_requires=[
         'jsonschema==2.4.0',
