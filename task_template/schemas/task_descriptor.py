@@ -1,7 +1,5 @@
 import os
 import json
-# import logging
-# logger = logging.getLogger("workers_and_deciders.task_descriptor")
 
 
 class TaskDescriptor():
