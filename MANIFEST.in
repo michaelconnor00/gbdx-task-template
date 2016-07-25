@@ -1,1 +1,1 @@
-recursive-include task_template *.json
+recursive-include gbdx_task_template *.json
